@@ -1,5 +1,5 @@
 <?php
-$server = "loccal host";
+$server = "localhost";
 $user = "root";
 $pass = "1q2w3e4r5t.";
 $nama_db = "db_basdat2";
