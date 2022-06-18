@@ -1,7 +1,7 @@
 <?php
 $server = "localhost";
 $user = "root";
-$pass =
+$pass = "";
 $nama_db = "db_basdat2";
 
 $db = mysqli_connect($server, $user, $pass, $nama_db);
