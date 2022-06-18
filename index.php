@@ -23,27 +23,24 @@ include "config.php";
             </tr>
           </thead>
           <tbody>
-              <?php
-              $sql = "SELECT * FROM pegawai"
-              $query = mysqli_query($db, $sql);
-
-              while ($hasil = mysqli_fetch_array($query)) {
-                  echo "<tr>";
-                  echo "<td>" . $hasil['NIP'] . "</td>";
-                  echo "<td>" . $hasil['NAMA'] . "</td>";
-                  echo "<td>" . $hasil['KOTA'] . "</td>";
-                  echo "<td>" . $hasil['TGL_LAHIR'] . "</td>";
-                  //merubah jenis kelamin L menjadi laki-laki, P menjadi perempuan
-                  if ($hasil['JK'] == 'L') {
-                      echo "<td>laki-laki</td>";
-                  } else {
-                      echo "<td>perempuan</td>";
-                  }
-                  echo "<td>" . $hasil{'KJ'} . "</td>";
-                  echo "</tr>";
-               
-                }
+                <?php
+                    $sql = "SELECT * FROM pegawai";
+                    $query = mysqli_query($db, $sql);
                 ?>
+                <?php while ($hasil = mysqli_fetch_array($query)) ?>
+                    <tr>
+                        <td><?= $hasil['nip'] ?></td>
+                        <td><?= $hasil['nama'] ?></td>
+                        <td><?= $hasil['kota'] ?></td>
+                        <td><?= $hasil['tgl_lahir'] ?></td>
+                        <?php if ($hasil['jk'] == 'L'): ?>
+                            <td>laki-laki</td>
+                        <?php else: ?>
+                            <td>perempuan</td>
+                        <?php endif; ?>
+                        <td><?= $hasil['kj'] ?></td>";
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
         <p>Total data: <?php echo mysqli_num_rows($query) ?></p>
