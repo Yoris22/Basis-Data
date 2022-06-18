@@ -27,7 +27,7 @@ include "config.php";
                     $sql = "SELECT * FROM pegawai";
                     $query = mysqli_query($db, $sql);
                 ?>
-                <?php while ($hasil = mysqli_fetch_array($query)) ?>
+                <?php while ($hasil = mysqli_fetch_array($query)): ?>
                     <tr>
                         <td><?= $hasil['nip'] ?></td>
                         <td><?= $hasil['nama'] ?></td>
