@@ -1,28 +1,28 @@
-<?php
-include "config.php";
-?>
-<!DOCTYPE html>
-<html>
+    <?php
+    include "config.php";
+    ?>
+    <!DOCTYPE html>
+    <html>
 
-</head>
-     <tittle> Basis Data 2 phpmyadmin</tittle>
-</head>
+    </head>
+        <tittle> Basis Data 2 phpmyadmin</tittle>
+    </head>
 
-<body>
-    </--menampilkan tabel pegawai -->
-    <h3>Isi Tabel Pegawai</h3>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>NIP</th>
-                <th>NAMA</th>
-                <th>KOTA</th>
-                <th>TGL_LAHIR</th>
-                <th>JK</th>
-                <th>KJ</th>
-            </tr>
-          </thead>
-          <tbody>
+    <body>
+        <!-- INI TABLE PEGAWAI -->
+        <h3>Isi Tabel Pegawai</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>NIP</th>
+                    <th>NAMA</th>
+                    <th>KOTA</th>
+                    <th>TGL_LAHIR</th>
+                    <th>JK</th>
+                    <th>KJ</th>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
                     $sql = "SELECT * FROM pegawai";
                     $query = mysqli_query($db, $sql);
@@ -44,6 +44,6 @@ include "config.php";
             </tbody>
         </table>
         <p>Total data: <?php echo mysqli_num_rows($query) ?></p>
-
- </body>
- </html>
+        <!-- END TABLE PEGAWAI -->
+    </body>
+    </html>
